@@ -1,0 +1,176 @@
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        background-image: url('333.jpg'); /* Imagem de fundo */
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed; /* Faz a imagem rolar com o site */
+        color: #fff;
+        text-align: center;
+        line-height: 1.6;
+        height: 100%;
+    }
+
+    /* Animação de abertura */
+    #content {
+        opacity: 0;
+        transform: scale(0.8);
+        animation: openSite 1s forwards;
+        animation-delay: 1.5s; /* Espera a animação de overlay terminar */
+    }
+
+    @keyframes openSite {
+        0% {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    /* Animação de overlay */
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        z-index: 9999;
+        animation: overlayDisappear 1.5s forwards;
+    }
+
+    @keyframes overlayDisappear {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            display: none;
+        }
+    }
+
+    header {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro para destacar o texto */
+    }
+
+    header h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        opacity: 0; /* Inicialmente invisível */
+        animation: fadeInText 2s ease-in forwards; /* Animação para o texto */
+        animation-delay: 2s; /* Espera 2 segundos para começar */
+    }
+
+    header p {
+        font-size: 1.5rem;
+        margin-bottom: 40px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        opacity: 0; /* Inicialmente invisível */
+        animation: fadeInText 2.5s ease-in forwards;
+        animation-delay: 2.5s; /* Espera 2.5 segundos para começar */
+    }
+
+    @keyframes fadeInText {
+        0% {
+            opacity: 0;
+            transform: translateY(20px); /* Move levemente para cima */
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    header a {
+        background-color: #ff9800;
+        color: #fff;
+        padding: 15px 30px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        transition: background-color 0.5s ease;
+        opacity: 0; /* Inicialmente invisível */
+        animation: fadeInText 3s ease-in forwards; /* Aparecendo depois */
+        animation-delay: 3s;
+    }
+
+    header a:hover {
+        background-color: #e68900;
+    }
+
+    section {
+        padding: 40px 20px;
+        background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente para destacar as informações */
+    }
+
+    section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: hsl(60, 100%, 50%);
+        opacity: 0;
+        animation: fadeInText 3.5s ease-in forwards; /* Animação de entrada para o título */
+    }
+
+    section p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        opacity: 0;
+        animation: fadeInText 4s ease-in forwards; /* Animação de entrada para os parágrafos */
+    }
+
+    .address, .date, .pix {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .pix {
+        color: #FF0000;
+    }
+
+    .horario-venda {
+        color: #0000FF; /* Cor azul */
+    }
+
+    footer {
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        opacity: 0;
+        animation: fadeInText 5s ease-in forwards; /* Animação para o footer */
+    }
+
+    footer a {
+        color: #ffeb3b;
+        text-decoration: none;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+    }
+</style>
